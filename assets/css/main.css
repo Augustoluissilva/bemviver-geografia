@@ -6,44 +6,67 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #FFFFFF; /* Branco como cor de base predominante */
-  --default-color: #A4A4A4; /* Cinza para a maior parte do texto */
-  --heading-color: #011751; /* Azul escuro para títulos e subtítulos */
-  --accent-color: #FFC92A; /* Amarelo para botões e links */
-  --highlight-color: #27CD6B; /* Verde para ícones ou elementos de destaque */
-  --contrast-color: #011751; /* Azul escuro para garantir legibilidade em fundos claros */
+:root {
+  --background-color: #FFFFFF;
+  /* Branco como cor de base predominante */
+  --default-color: #A4A4A4;
+  /* Cinza para a maior parte do texto */
+  --heading-color: #011751;
+  /* Azul escuro para títulos e subtítulos */
+  --accent-color: #FFC92A;
+  /* Amarelo para botões e links */
+  --highlight-color: #27CD6B;
+  /* Verde para ícones ou elementos de destaque */
+  --contrast-color: #011751;
+  /* Azul escuro para garantir legibilidade em fundos claros */
 }
 
 /* Cores do Menu de Navegação */
 :root {
-  --nav-color: #011751;  /* Links principais do menu em azul escuro */
-  --nav-hover-color: #27CD6B; /* Verde ao passar o mouse sobre os links do menu */
-  --nav-mobile-background-color: #FFFFFF; /* Fundo do menu móvel em branco */
-  --nav-dropdown-background-color: #FFFFFF; /* Fundo do dropdown em branco */
-  --nav-dropdown-color: #011751; /* Links do dropdown em azul escuro */
-  --nav-dropdown-hover-color: #27CD6B; /* Verde ao passar o mouse sobre os itens do dropdown */
+  --nav-color: #fff;
+  /* Links principais do menu em azul escuro */
+  --nav-hover-color: #27CD6B;
+  /* Verde ao passar o mouse sobre os links do menu */
+  --nav-mobile-background-color: #FFFFFF;
+  /* Fundo do menu móvel em branco */
+  --nav-dropdown-background-color: #FFFFFF;
+  /* Fundo do dropdown em branco */
+  --nav-dropdown-color: #011751;
+  /* Links do dropdown em azul escuro */
+  --nav-dropdown-hover-color: #27CD6B;
+  /* Verde ao passar o mouse sobre os itens do dropdown */
 }
 
 /* Presets de cores para seções específicas */
 .light-background {
-  --background-color: #FFFFFF; /* Branco para seções mais leves */
-  --surface-color: #A4A4A4; /* Cinza para áreas secundárias */
+  --background-color: #FFFFFF;
+  /* Branco para seções mais leves */
+  --surface-color: #A4A4A4;
+  /* Cinza para áreas secundárias */
 }
 
 .dark-background {
-  --background-color: #011751; /* Azul escuro para seções de fundo forte */
-  --default-color: #FFFFFF; /* Texto em branco para garantir contraste */
-  --heading-color: #FFC92A; /* Amarelo para títulos de destaque */
-  --surface-color: #A4A4A4; /* Cinza para harmonia visual */
-  --contrast-color: #FFFFFF; /* Branco para garantir legibilidade */
+  --background-color: #011751;
+  /* Azul escuro para seções de fundo forte */
+  --default-color: #FFFFFF;
+  /* Texto em branco para garantir contraste */
+  --heading-color: #FFC92A;
+  /* Amarelo para títulos de destaque */
+  --surface-color: #A4A4A4;
+  /* Cinza para harmonia visual */
+  --contrast-color: #FFFFFF;
+  /* Branco para garantir legibilidade */
 }
 
 .accent-background {
-  --background-color: #27CD6B; /* Verde para áreas de destaque */
-  --default-color: #011751; /* Texto em azul escuro */
-  --heading-color: #FFFFFF; /* Títulos em branco */
-  --surface-color: #A4A4A4; /* Cinza para caixas e divisões */
+  --background-color: #27CD6B;
+  /* Verde para áreas de destaque */
+  --default-color: #011751;
+  /* Texto em azul escuro */
+  --heading-color: #FFFFFF;
+  /* Títulos em branco */
+  --surface-color: #A4A4A4;
+  /* Cinza para caixas e divisões */
 }
 
 /* Smooth scroll */
@@ -174,6 +197,23 @@ h6 {
   --background-color: #FFFFFF;
 }
 
+.scrolled .navmenu a{
+  color: #A4A4A4;
+}
+
+.scrolled .navmenu a:hover{
+  color: #011751;
+  background-color: #27CD6B;
+}
+
+.scrolled .navmenu li:hover>a,
+.scrolled .navmenu .active,
+.scrolled .navmenu .active:focus {
+  color: var(--contrast-color);
+  background-color: var(--nav-hover-color);
+}
+
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -195,7 +235,20 @@ h6 {
     position: relative;
   }
 
-  .navmenu a,
+  .navmenu a {
+    color: var(--nav-color);
+    padding: 10px 15px;
+    margin-left: 2px;
+    font-size: 16px;
+    font-family: var(--nav-font);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
   .navmenu a:focus {
     color: var(--nav-color);
     padding: 10px 15px;
@@ -286,7 +339,7 @@ h6 {
 /* Mobile Navigation */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: var(--nav-color);
+    color: #011751;
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
@@ -794,13 +847,12 @@ section,
 }
 
 .hero p {
-  color: var(--default-color);
+  color: #FFC92A;
   margin: 10px 0 0 0;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  text-shadow: -1px 0 2px #011751;
 }
 
 @media (max-width: 640px) {
@@ -812,7 +864,7 @@ section,
 
 .hero .btn-scroll {
   transition: 0.4s;
-  color: var(--default-color);
+  color: #fff;
   display: block;
   margin-top: 30px;
   animation: btn-up-down 1s ease-in-out infinite alternate-reverse both;
@@ -847,6 +899,7 @@ section,
 
 .about .content p {
   margin-bottom: 30px;
+  text-align: justify;
 }
 
 .about .content .about-btn {
