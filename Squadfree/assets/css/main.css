@@ -6,67 +6,44 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root {
-  --background-color: #A4A4A4;
-  /* Cinza como cor de fundo predominante */
-  --default-color: #011751;
-  /* Azul escuro para a maior parte do texto */
-  --heading-color: #011751;
-  /* Azul escuro para títulos e subtítulos */
-  --accent-color: #FFC92A;
-  /* Amarelo para elementos de destaque, como botões e links */
-  --surface-color: #FFFFFF;
-  /* Branco para superfícies e elementos de separação */
-  --contrast-color: #FFFFFF;
-  /* Branco para garantir legibilidade em fundos mais escuros */
+:root { 
+  --background-color: #FFFFFF; /* Branco como cor de base predominante */
+  --default-color: #A4A4A4; /* Cinza para a maior parte do texto */
+  --heading-color: #011751; /* Azul escuro para títulos e subtítulos */
+  --accent-color: #FFC92A; /* Amarelo para botões e links */
+  --highlight-color: #27CD6B; /* Verde para ícones ou elementos de destaque */
+  --contrast-color: #011751; /* Azul escuro para garantir legibilidade em fundos claros */
 }
 
 /* Cores do Menu de Navegação */
 :root {
-  --nav-color: #011751;
-  /* Links principais do menu em branco, contrastando com o fundo cinza */
-  --nav-hover-color: #A4A4A4;
-  /* Azul escuro ao passar o mouse sobre os links do menu */
-  --nav-mobile-background-color: #ffff;
-  /* Fundo do menu móvel em cinza */
-  --nav-dropdown-background-color: #011751;
-  /* Fundo do dropdown em cinza */
-  --nav-dropdown-color: #A4A4A4;
-  /* Links do dropdown em azul escuro */
-  --nav-dropdown-hover-color: #A4A4A4;
-  /* Azul escuro ao passar o mouse sobre os itens do dropdown */
+  --nav-color: #011751;  /* Links principais do menu em azul escuro */
+  --nav-hover-color: #27CD6B; /* Verde ao passar o mouse sobre os links do menu */
+  --nav-mobile-background-color: #FFFFFF; /* Fundo do menu móvel em branco */
+  --nav-dropdown-background-color: #FFFFFF; /* Fundo do dropdown em branco */
+  --nav-dropdown-color: #011751; /* Links do dropdown em azul escuro */
+  --nav-dropdown-hover-color: #27CD6B; /* Verde ao passar o mouse sobre os itens do dropdown */
 }
 
 /* Presets de cores para seções específicas */
 .light-background {
-  --background-color: #FFFFFF;
-  /* Branco para seções mais leves */
-  --surface-color: #A4A4A4;
-  /* Cinza para elementos que precisam de destaque sutil */
+  --background-color: #FFFFFF; /* Branco para seções mais leves */
+  --surface-color: #A4A4A4; /* Cinza para áreas secundárias */
 }
 
 .dark-background {
-  --background-color: #011751;
-  /* Azul escuro para seções com fundo mais forte */
-  --default-color: #FFFFFF;
-  /* Texto em branco para garantir contraste */
-  --heading-color: #FFC92A;
-  /* Amarelo nos títulos para um toque de cor sem exagero */
-  --surface-color: #A4A4A4;
-  /* Cinza para manter a harmonia visual */
-  --contrast-color: #FFFFFF;
-  /* Branco para garantir legibilidade */
+  --background-color: #011751; /* Azul escuro para seções de fundo forte */
+  --default-color: #FFFFFF; /* Texto em branco para garantir contraste */
+  --heading-color: #FFC92A; /* Amarelo para títulos de destaque */
+  --surface-color: #A4A4A4; /* Cinza para harmonia visual */
+  --contrast-color: #FFFFFF; /* Branco para garantir legibilidade */
 }
 
 .accent-background {
-  --background-color: #011751;
-  /* Azul para áreas de destaque */
-  --default-color: #FFFFFF;
-  /* Texto em branco */
-  --heading-color: #FFFFFF;
-  /* Títulos em branco */
-  --surface-color: #A4A4A4;
-  /* Cinza para caixas e elementos */
+  --background-color: #27CD6B; /* Verde para áreas de destaque */
+  --default-color: #011751; /* Texto em azul escuro */
+  --heading-color: #FFFFFF; /* Títulos em branco */
+  --surface-color: #A4A4A4; /* Cinza para caixas e divisões */
 }
 
 /* Smooth scroll */
