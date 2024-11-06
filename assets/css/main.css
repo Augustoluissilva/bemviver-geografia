@@ -1791,6 +1791,28 @@ section,
   color: var(--accent-color);
 }
 
+/* Centraliza horizontalmente a seção */
+#alzheimer {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+/* Define o layout das colunas lado a lado */
+#alzheimer .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Garante que a coluna de Prevenção e Tratamento fiquem bem ao lado uma da outra */
+#alzheimer .col-lg-8 {
+  margin-bottom: 20px;
+}
+
+#alzheimer .col-lg-4 {
+  margin-top: 20px;
+}
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
