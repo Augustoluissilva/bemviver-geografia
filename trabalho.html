@@ -176,53 +176,39 @@
       </section>
 
       <!-- Know-How Chat Section -->
-      <section id="know-how-chat" class="section d-flex align-items-center justify-content-center"
-        style="min-height: 100vh;">
+      <section id="know-how-chat" class="about section">
         <div class="container">
-          <div class="row gy-5 justify-content-center">
+          <div class="row gy-5">
+            <div class="content col-xl-7 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
+              <!-- Seção de perguntas para todos, cadastrados ou não -->
+              <h3>Faça sua Pergunta ou Responda</h3>
 
-            <!-- Chat Bot Area -->
-            <div class="content col-xl-5 d-flex flex-column align-items-center text-center" data-aos="fade-up"
-              data-aos-delay="100">
-              <h3>Know-How</h3>
-              <p>Selecione uma dúvida para responder, se for cadastrado.</p>
-
-              <!-- Chat Bot Interface -->
-              <div id="chat-container" style="position: relative; width: 100%; max-width: 500px; margin-top: 20px;">
-
-                <!-- Chat Messages -->
-                <div id="chat-messages"
-                  style="border: 1px solid var(--default-color); border-radius: 10px; padding: 15px; height: 200px; overflow-y: auto;">
-                  <p><strong>Usuário:</strong> Como manter o profissionalismo durante reuniões online?</p>
-                  <p><strong>Usuário:</strong> Quais as principais práticas de um mentor?</p>
-                  <p><strong>Usuário:</strong> Como lidar com críticas no ambiente de trabalho?</p>
+              <div class="question-list">
+                <!-- As perguntas são carregadas aqui -->
+                <div class="question-item" onclick="showRegistrationForm()">Como me torno um bom mentor para os idosos?
                 </div>
+                <div class="question-item" onclick="showRegistrationForm()">Quais são os desafios comuns ao ajudar
+                  idosos?</div>
+                <div class="question-item" onclick="showRegistrationForm()">Como posso melhorar minha comunicação com
+                  idosos?</div>
+              </div>
 
-                <!-- Botão para selecionar a dúvida e responder -->
-                <p style="margin-top: 10px;">Clique em uma pergunta para responder como mentor.</p>
-                <button class="know-how-btn" onclick="selectQuestion()">Selecionar Pergunta</button>
+              <!-- Formulário para não cadastrados fazerem perguntas -->
+              <div class="form-section">
+                <h4>Fazer uma Pergunta</h4>
+                <textarea placeholder="Digite sua pergunta aqui..." id="new-question" rows="4"></textarea>
+                <button onclick="submitQuestion()">Enviar Pergunta</button>
+              </div>
 
-                <!-- Overlay de Inscrição com Formulário (aparece ao selecionar uma pergunta) -->
-                <div id="registration-overlay"
-                  style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.95); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--heading-color); padding: 20px;">
-                  <h4>Cadastre-se para Responder</h4>
-                  <form id="registration-form" onsubmit="submitRegistration(event)">
-                    <input type="text" id="name" placeholder="Nome" required
-                      style="width: 100%; margin-top: 10px; padding: 8px; border-radius: 5px;"><br>
-                    <input type="number" id="age" placeholder="Idade" required
-                      style="width: 100%; margin-top: 10px; padding: 8px; border-radius: 5px;"><br>
-                    <input type="tel" id="phone" placeholder="Telefone" required
-                      style="width: 100%; margin-top: 10px; padding: 8px; border-radius: 5px;"><br>
-                    <button type="submit" class="know-how-btn" style="margin-top: 10px;">Cadastrar</button>
-                  </form>
-                </div>
-
-                <!-- Campo de Resposta (escondido inicialmente, aparece após cadastro) -->
-                <textarea id="response-input" placeholder="Digite sua resposta..."
-                  style="width: 100%; margin-top: 10px; border-radius: 5px; padding: 8px; display: none;"></textarea>
-                <button class="know-how-btn" id="send-response-btn" onclick="sendResponse()"
-                  style="margin-top: 10px; display: none;">Enviar Resposta</button>
-
+              <!-- Cadastro aparece apenas quando a pergunta é selecionada -->
+              <div id="registration-container" style="display:none;">
+                <h3>Cadastre-se para Responder</h3>
+                <form id="registration-form">
+                  <input type="text" id="name" placeholder="Nome" required><br>
+                  <input type="number" id="age" placeholder="Idade" required><br>
+                  <input type="tel" id="phone" placeholder="Telefone" required><br>
+                  <button type="submit">Cadastrar</button>
+                </form>
               </div>
             </div>
           </div>
@@ -230,41 +216,19 @@
       </section>
 
       <script>
-        function selectQuestion() {
-          const isRegistered = false; // Troque para true se o usuário já estiver cadastrado
-
-          if (!isRegistered) {
-            // Exibe o overlay de inscrição se o usuário não estiver cadastrado
-            document.getElementById("registration-overlay").style.display = "flex";
-          } else {
-            // Se o usuário já estiver cadastrado, mostra o campo de resposta
-            document.getElementById("response-input").style.display = "block";
-            document.getElementById("send-response-btn").style.display = "inline-block";
-          }
+        // Função para exibir o formulário de cadastro quando uma pergunta for selecionada
+        function showRegistrationForm() {
+          document.getElementById('registration-container').style.display = 'block';
         }
 
-        function submitRegistration(event) {
-          event.preventDefault(); // Impede o envio padrão do formulário
-
-          // Aqui você pode adicionar lógica para salvar os dados de cadastro
-
-          // Oculta o formulário de cadastro após o envio e mostra o campo de resposta
-          document.getElementById("registration-overlay").style.display = "none";
-          document.getElementById("response-input").style.display = "block";
-          document.getElementById("send-response-btn").style.display = "inline-block";
-          alert("Cadastro realizado com sucesso!");
-        }
-
-        function sendResponse() {
-          const response = document.getElementById("response-input").value;
-          if (response) {
-            // Exibe a resposta no chat
-            const chatMessages = document.getElementById("chat-messages");
-            chatMessages.innerHTML += `<p><strong>Mentor:</strong> ${response}</p>`;
-            document.getElementById("response-input").value = ""; // Limpa o campo de resposta
-            alert("Resposta enviada com sucesso!");
+        // Função para simular o envio da pergunta (não exige cadastro)
+        function submitQuestion() {
+          var question = document.getElementById('new-question').value;
+          if (question) {
+            alert('Sua pergunta foi enviada: ' + question);
+            document.getElementById('new-question').value = ''; // Limpa o campo após o envio
           } else {
-            alert("Digite uma resposta antes de enviar.");
+            alert('Por favor, digite uma pergunta.');
           }
         }
       </script>
@@ -309,6 +273,171 @@
           /* Centraliza o conteúdo dentro do container */
         }
       </style>
+
+      <!-- Job Opportunities Section -->
+      <section id="jobs" class="jobs section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Oportunidades de Trabalho</h2>
+          <p>Participe e contribua com sua experiência e habilidades!</p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+          <div class="row gy-4">
+            <!-- Vaga 1: Professora de Costura -->
+            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="job-item">
+                <h3>Professora de Costura</h3>
+                <h4><sup>R$</sup>1.200,00<span
+                    style="color: #011751; font-size: 28px; font-weight: bold; margin-left: 5%;">20/10</span></h4>
+                <h5 style="font-weight: bold; margin-top: 5%;">Ensinar técnicas de costura básica e avançada</h5>
+                <ul>
+                  <li><i class="bi bi-check"></i> <span>Incluso material de apoio e agendamento de aulas</span></li>
+                  <li><i class="bi bi-geo-alt-fill"></i><span>Escola de Artes, Rua das Flores, 123 - Centro, São
+                      Paulo</span></li>
+                  <li><i class="bi bi-clock-fill"></i><span>14:00 - 17:00</span></li>
+                </ul>
+                <a href="#registration-container" class="apply-btn">Candidatar-se</a>
+              </div>
+            </div><!-- End Job Item -->
+
+            <!-- Vaga 2: Professora de Confeitaria -->
+            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="job-item">
+                <h3>Professora de Confeitaria</h3>
+                <h4><sup>R$</sup>1.500,00<span
+                    style="color: #011751; font-size: 28px; font-weight: bold; margin-left: 5%;">25/10</span></h4>
+                <h5 style="font-weight: bold; margin-top: 5%;">Ensinar técnicas de confeitaria e bolos decorados</h5>
+                <ul>
+                  <li><i class="bi bi-check"></i> <span>Incluso ingredientes e utensílios para as aulas</span></li>
+                  <li><i class="bi bi-geo-alt-fill"></i><span>Centro de Gastronomia, Rua do Sabor, 45 - Vila Nova,
+                      Campinas</span></li>
+                  <li><i class="bi bi-clock-fill"></i><span>09:00 - 12:00</span></li>
+                </ul>
+                <a href="#registration-container" class="apply-btn">Candidatar-se</a>
+              </div>
+            </div><!-- End Job Item -->
+
+            <!-- Vaga 3: Ajudante de Jardinagem -->
+            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="job-item">
+                <h3>Ajudante de Jardinagem</h3>
+                <h4><sup>R$</sup>800,00<span
+                    style="color: #011751; font-size: 28px; font-weight: bold; margin-left: 5%;">05/11</span></h4>
+                <h5 style="font-weight: bold; margin-top: 5%;">Cuidados com plantas e jardins</h5>
+                <ul>
+                  <li><i class="bi bi-check"></i> <span>Incluso ferramentas e treinamento</span></li>
+                  <li><i class="bi bi-geo-alt-fill"></i><span>Jardim Botânico, Av. das Palmeiras, 200 - Zona Sul, Rio de
+                      Janeiro</span></li>
+                  <li><i class="bi bi-clock-fill"></i><span>08:00 - 12:00</span></li>
+                </ul>
+                <a href="#registration-container" class="apply-btn">Candidatar-se</a>
+              </div>
+            </div><!-- End Job Item -->
+
+            <!-- Vaga 4: Monitor de Atividades Recreativas -->
+            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="job-item">
+                <h3>Monitor de Atividades Recreativas</h3>
+                <h4><sup>R$</sup>1.000,00<span
+                    style="color: #011751; font-size: 28px; font-weight: bold; margin-left: 5%;">15/11</span></h4>
+                <h5 style="font-weight: bold; margin-top: 5%;">Organizar e conduzir atividades de lazer para grupos de
+                  idosos</h5>
+                <ul>
+                  <li><i class="bi bi-check"></i> <span>Incluso transporte e alimentação</span></li>
+                  <li><i class="bi bi-geo-alt-fill"></i><span>Centro de Recreação, Rua da Alegria, 123 - Bairro Jardim,
+                      Belo Horizonte</span></li>
+                  <li><i class="bi bi-clock-fill"></i><span>10:00 - 14:00</span></li>
+                </ul>
+                <a href="#registration-container" class="apply-btn">Candidatar-se</a>
+              </div>
+            </div><!-- End Job Item -->
+
+            <!-- Vaga 5: Cuidador de Idosos -->
+            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="job-item">
+                <h3>Cuidador de Idosos</h3>
+                <h4><sup>R$</sup>1.500,00<span
+                    style="color: #011751; font-size: 28px; font-weight: bold; margin-left: 5%;">01/12</span></h4>
+                <h5 style="font-weight: bold; margin-top: 5%;">Apoiar idosos com cuidados diários e atividades pessoais
+                </h5>
+                <ul>
+                  <li><i class="bi bi-check"></i> <span>Treinamento incluso</span></li>
+                  <li><i class="bi bi-geo-alt-fill"></i><span>Residência Particular, Rua do Bem, 98 - Centro, São
+                      José</span></li>
+                  <li><i class="bi bi-clock-fill"></i><span>08:00 - 18:00</span></li>
+                </ul>
+                <a href="#registration-container" class="apply-btn">Candidatar-se</a>
+              </div>
+            </div><!-- End Job Item -->
+
+            <!-- Vaga 6: Instrutor de Tai Chi -->
+            <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="job-item">
+                <h3>Instrutor de Tai Chi</h3>
+                <h4><sup>R$</sup>900,00<span
+                    style="color: #011751; font-size: 28px; font-weight: bold; margin-left: 5%;">10/12</span></h4>
+                <h5 style="font-weight: bold; margin-top: 5%;">Ensinar exercícios de Tai Chi para idosos</h5>
+                <ul>
+                  <li><i class="bi bi-check"></i> <span>Incluso materiais de apoio e espaço para as aulas</span></li>
+                  <li><i class="bi bi-geo-alt-fill"></i><span>Centro de Bem-Estar, Av. da Saúde, 120 - Zona Oeste, São
+                      Paulo</span></li>
+                  <li><i class="bi bi-clock-fill"></i><span>07:00 - 09:00</span></li>
+                </ul>
+                <a href="#registration-container" class="apply-btn">Candidatar-se</a>
+              </div>
+            </div><!-- End Job Item -->
+
+          </div>
+        </div>
+
+        <!-- Cadastro Form -->
+        <div id="registration-container" style="display:none;">
+          <h3>Cadastre-se para Participar</h3>
+          <form id="registration-form">
+            <input type="text" id="name" placeholder="Nome" required><br>
+            <input type="number" id="age" placeholder="Idade" required><br>
+            <input type="tel" id="phone" placeholder="Telefone" required><br>
+            <button type="submit">Cadastrar</button>
+          </form>
+        </div>
+
+      </section><!-- /Job Opportunities Section -->
+
+      <script>
+        // Armazenar dados de cadastro
+        let userData = JSON.parse(localStorage.getItem("userData")) || null;
+
+        // Função de inscrição no evento
+        function handleJobSignup(event) {
+          // Verificar se o usuário está cadastrado
+          if (!userData) {
+            document.getElementById('registration-container').style.display = 'block';
+            return;
+          }
+
+          // Se o usuário já estiver cadastrado, pode aplicar diretamente
+          alert('Você já está cadastrado! Pode aplicar diretamente.');
+        }
+
+        // Registro de formulário
+        document.getElementById('registration-form').addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          // Capturar os dados inseridos
+          const name = document.getElementById('name').value;
+          const age = document.getElementById('age').value;
+          const phone = document.getElementById('phone').value;
+
+          // Armazenar os dados no localStorage
+          userData = { name, age, phone };
+          localStorage.setItem('userData', JSON.stringify(userData));
+
+          // Fechar o formulário e permitir candidatura
+          alert('Cadastro realizado com sucesso!');
+          document.getElementById('registration-container').style.display = 'none';
+        });
+      </script>
 
   </main>
 
