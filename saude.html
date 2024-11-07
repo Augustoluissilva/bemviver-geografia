@@ -79,10 +79,10 @@
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="services-list">
-              <a href="#" class="active">Cuidados Preventivos</a>
-              <a href="#">Doenças Comuns</a>
+              <a href="#service-details" class="active">Cuidados Preventivos</a>
+              <a href="#faq">Doenças Comuns</a>
+              <a href="#alzheimer">Alzheimer</a>
               <a href="#">Atividade Física</a>
-              <a href="#">Alzheimer</a>
             </div>
 
             <h4>Importante <i class="bi bi-exclamation-triangle-fill text-warning"></i></h4>
@@ -314,6 +314,55 @@
 
     </section><!-- /Call To Action Section -->
 
+    <section id="atv.fis" class="service-details section" style="text-align: justify;">
+      <div class="container"> <!-- Adicionando um container para centralizar o conteúdo -->
+        <div class="row">
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <img
+              src="https://www.casaderepousobrilhodosol.com.br/wp-content/uploads/2018/06/melhorcasaderepousoemsp_zonaoeste_idoso.jpg"
+              alt="Idosos se exercitando juntos" class="img-fluid services-img">
+            <h3>A <strong style="color: #011751;">Atividade física</strong> é fundamental para os
+              idosos, trazendo benefícios para o corpo e a mente, e ajudando a manter a independência e qualidade de
+              vida.</h3>
+            <p>
+              Uma vida fisicamente ativa é essencial para a saúde em todas as idades, e para os idosos, seus benefícios
+              são especialmente físicos, sociais, fisiológicos e psicológicos. A prática regular de exercícios, como os
+              de força e equilíbrio, ajuda a combater a perda de massa muscular (sarcopenia) e óssea (osteopenia),
+              prevenindo quedas e fraturas. Além disso, a atividade física promove a independência, reduz dores e
+              cansaço, melhora a socialização, autoestima e saúde mental, e ainda contribui para a prevenção de doenças
+              crônicas e cognitivas, como a demência e o Alzheimer.
+            </p>
+            <div class="content-wrapper">
+              <div class="program-info">
+                <img src="assets/img/images.png" alt="Academia da Saúde" class="program-image">
+                <p>O Programa Academia da Saúde, do SUS, promove hábitos saudáveis e melhora a qualidade de vida por
+                  meio
+                  de atividades físicas e ações de saúde integradas. Com polos equipados e profissionais qualificados,
+                  oferece atividades multidisciplinares que incluem exercícios físicos, além de aspectos sociais e
+                  culturais, visando o bem-estar geral da população. Para apoiar essas práticas, o governo disponibiliza
+                  o
+                  Guia de Atividade Física para a População Brasileira, que oferece orientações sobre como manter-se
+                  fisicamente ativo em todas as fases da vida.</p>
+                <a class="learn-more-btn"
+                  href="https://www.gov.br/saude/pt-br/assuntos/saude-brasil/eu-quero-me-exercitar/documentos/pdf/guia_atividade_fisica_populacao_brasileira.pdf">Saiba
+                  Mais</a>
+              </div>
+              <div class="polo-info">
+                <h5>Onde encontrar polos do Programa Academia da Saúde?</h5>
+                <p>Os polos do Programa Academia da Saúde estão localizados em diversas cidades brasileiras, geralmente
+                  vinculados às Unidades Básicas de Saúde (UBS) e outras estruturas do Sistema Único de Saúde (SUS).
+                  Para
+                  encontrar um polo próximo de você, é possível consultar as UBS ou postos de saúde locais, onde eles
+                  podem fornecer informações sobre a existência de um polo da Academia da Saúde na sua região. Além
+                  disso,
+                  muitos municípios divulgam essas informações em seus sites oficiais ou diretamente nas secretarias
+                  municipais de saúde.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section><!-- /Service Details Section -->
+
   </main>
 
   <footer id="footer" class="footer dark-background">
@@ -469,4 +518,35 @@
     list-style-type: none;
     /* Remove os marcadores da lista */
   }
+
+  .content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Espaçamento entre os itens */
+}
+
+.program-info,
+.polo-info {
+  flex: 1;
+  min-width: 320px; /* Garante que as divs não fiquem pequenas demais */
+}
+
+.program-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.learn-more-btn {
+  margin-top: 10px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.learn-more-btn:hover {
+  background-color: #0056b3;
+}
 </style>
