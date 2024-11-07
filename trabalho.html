@@ -62,8 +62,9 @@
     <div class="page-title accent-background">
       <div class="container position-relative">
         <h1>Trabalho</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam
-          molestias.</p>
+        <p>O trabalho é fundamental para realização pessoal e contribuição para a sociedade. Na terceira idade, o
+          trabalho pode assumir formas como consultoria, empreendedorismo, voluntariado ou continuidade na carreira,
+          mantendo autonomia, saúde mental e compartilhando experiências e habilidades adquiridas ao longo da vida.</p>
       </div>
     </div><!-- End Page Title -->
 
@@ -111,9 +112,8 @@
 
             <!-- Seção de Benefícios -->
             <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-              <img
-                src="https://classic.exame.com/wp-content/uploads/2016/09/size_960_16_9_idoso-trabalho.jpg?quality=70&strip=info&w=960"
-                alt="" class="img-fluid services-img">
+              <img src="https://conteudodoc.cuidadospelavida.com.br/wp-content/uploads/2023/10/50100.jpg" alt=""
+                class="img-fluid services-img">
               <h3>Benefícios da Inclusão</h3>
               <p>
                 A inclusão dos idosos no mercado de trabalho traz benefícios para a economia e a sociedade. Eles agregam
@@ -138,7 +138,7 @@
 
                   <!-- Desafios -->
                   <div class="row faq-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col-lg-12 d-flex">
+                    <div class="col-lg-12">
                       <i class="bi bi-x"></i>
                       <h2>Desafios</h2>
                       <ul>
@@ -152,7 +152,7 @@
 
                   <!-- Soluções -->
                   <div class="row faq-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="col-lg-12 d-flex">
+                    <div class="col-lg-12">
                       <i class="bi bi-check"></i>
                       <h2>Soluções</h2>
                       <ul>
@@ -176,14 +176,13 @@
       <section id="know-how-chat" class="section d-flex align-items-center justify-content-center"
         style="min-height: 100vh;">
         <div class="container">
-
           <div class="row gy-5 justify-content-center">
 
             <!-- Chat Bot Area -->
             <div class="content col-xl-5 d-flex flex-column align-items-center text-center" data-aos="fade-up"
               data-aos-delay="100">
               <h3>Know-How</h3>
-              <p>Escreva sua dúvida e um mentor cadastrado responderá.</p>
+              <p>Selecione uma dúvida para responder, se for cadastrado.</p>
 
               <!-- Chat Bot Interface -->
               <div id="chat-container" style="position: relative; width: 100%; max-width: 500px; margin-top: 20px;">
@@ -191,19 +190,19 @@
                 <!-- Chat Messages -->
                 <div id="chat-messages"
                   style="border: 1px solid var(--default-color); border-radius: 10px; padding: 15px; height: 200px; overflow-y: auto;">
-                  <p><strong>Você:</strong> Olá, como posso ajudar?</p>
-                  <!-- As respostas do mentor irão aparecer aqui -->
+                  <p><strong>Usuário:</strong> Como manter o profissionalismo durante reuniões online?</p>
+                  <p><strong>Usuário:</strong> Quais as principais práticas de um mentor?</p>
+                  <p><strong>Usuário:</strong> Como lidar com críticas no ambiente de trabalho?</p>
                 </div>
 
-                <!-- Chat Input -->
-                <textarea id="chat-input" placeholder="Digite sua dúvida..."
-                  style="width: 100%; margin-top: 10px; border-radius: 5px; padding: 8px;"></textarea>
-                <button class="know-how-btn" onclick="checkRegistration()" style="margin-top: 10px;">Enviar</button>
+                <!-- Botão para selecionar a dúvida e responder -->
+                <p style="margin-top: 10px;">Clique em uma pergunta para responder como mentor.</p>
+                <button class="know-how-btn" onclick="selectQuestion()">Selecionar Pergunta</button>
 
-                <!-- Overlay de Inscrição com Formulário (aparece sobre o chat) -->
+                <!-- Overlay de Inscrição com Formulário (aparece ao selecionar uma pergunta) -->
                 <div id="registration-overlay"
                   style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.95); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--heading-color); padding: 20px;">
-                  <h4>Cadastre-se para Participar</h4>
+                  <h4>Cadastre-se para Responder</h4>
                   <form id="registration-form" onsubmit="submitRegistration(event)">
                     <input type="text" id="name" placeholder="Nome" required
                       style="width: 100%; margin-top: 10px; padding: 8px; border-radius: 5px;"><br>
@@ -215,6 +214,12 @@
                   </form>
                 </div>
 
+                <!-- Campo de Resposta (escondido inicialmente, aparece após cadastro) -->
+                <textarea id="response-input" placeholder="Digite sua resposta..."
+                  style="width: 100%; margin-top: 10px; border-radius: 5px; padding: 8px; display: none;"></textarea>
+                <button class="know-how-btn" id="send-response-btn" onclick="sendResponse()"
+                  style="margin-top: 10px; display: none;">Enviar Resposta</button>
+
               </div>
             </div>
           </div>
@@ -222,14 +227,16 @@
       </section>
 
       <script>
-        function checkRegistration() {
-          const isRegistered = false; // Troque para true quando o usuário estiver cadastrado
+        function selectQuestion() {
+          const isRegistered = false; // Troque para true se o usuário já estiver cadastrado
 
           if (!isRegistered) {
             // Exibe o overlay de inscrição se o usuário não estiver cadastrado
             document.getElementById("registration-overlay").style.display = "flex";
           } else {
-            alert("Sua dúvida foi enviada!");
+            // Se o usuário já estiver cadastrado, mostra o campo de resposta
+            document.getElementById("response-input").style.display = "block";
+            document.getElementById("send-response-btn").style.display = "inline-block";
           }
         }
 
@@ -238,9 +245,24 @@
 
           // Aqui você pode adicionar lógica para salvar os dados de cadastro
 
-          // Oculta o formulário de cadastro após o envio
+          // Oculta o formulário de cadastro após o envio e mostra o campo de resposta
           document.getElementById("registration-overlay").style.display = "none";
+          document.getElementById("response-input").style.display = "block";
+          document.getElementById("send-response-btn").style.display = "inline-block";
           alert("Cadastro realizado com sucesso!");
+        }
+
+        function sendResponse() {
+          const response = document.getElementById("response-input").value;
+          if (response) {
+            // Exibe a resposta no chat
+            const chatMessages = document.getElementById("chat-messages");
+            chatMessages.innerHTML += `<p><strong>Mentor:</strong> ${response}</p>`;
+            document.getElementById("response-input").value = ""; // Limpa o campo de resposta
+            alert("Resposta enviada com sucesso!");
+          } else {
+            alert("Digite uma resposta antes de enviar.");
+          }
         }
       </script>
 
