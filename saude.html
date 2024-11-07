@@ -331,7 +331,8 @@
               crônicas e cognitivas, como a demência e o Alzheimer.</p>
             <div class="content-wrapper">
               <div class="program-info">
-                <img src="assets/img/images.png" alt="Academia da Saúde" class="program-image">
+                <img src="assets/img/images.png"
+                  alt="Academia da Saúde" class="program-image">
                 <p>O Programa Academia da Saúde, do SUS, promove hábitos saudáveis e melhora a qualidade de vida por
                   meio de atividades físicas e ações de saúde integradas. Com polos equipados e profissionais
                   qualificados, oferece atividades multidisciplinares que incluem exercícios físicos, além de aspectos
@@ -507,21 +508,33 @@
   }
 
   .atv-fis {
-    max-width: 300%; /* ou o valor desejado */
+    max-width: 500%;
+    /* ou o valor desejado */
     width: 100%;
     margin: 0 auto;
-}
+  }
 
-.content-wrapper {
+  .atv-fis img {
+    justify-content: center;
+    align-items: center;
     display: flex;
-    flex-direction: row; /* Altera para lado a lado */
-    justify-content: space-between; /* Distribui o espaço entre as divs */
-    gap: 20px; /* Espaço entre as divs */
-}
+  }
 
-.program-info, .polo-info {
-    width: 48%; /* Ajusta a largura de cada div para caber no layout */
-}
+  .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    /* Altera para lado a lado */
+    justify-content: space-between;
+    /* Distribui o espaço entre as divs */
+    gap: 20px;
+    /* Espaço entre as divs */
+  }
+
+  .program-info,
+  .polo-info {
+    width: 48%;
+    /* Ajusta a largura de cada div para caber no layout */
+  }
 
   .image-wrapper {
     display: flex;
