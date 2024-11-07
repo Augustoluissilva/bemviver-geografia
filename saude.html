@@ -213,7 +213,7 @@
 
         <div class="row faq-item" data-aos="fade-up" data-aos-delay="500">
           <div class="col-lg-5 d-flex">
-            <i class="bi bi-winds"></i> <!-- Ícone de motores de avião para doenças respiratórias -->
+            <i class="bi bi-arrow-right "></i> <!-- Ícone de motores de avião para doenças respiratórias -->
             <h4>Doenças respiratórias crônicas</h4>
           </div>
           <div class="col-lg-7">
@@ -412,16 +412,66 @@
 
 </html>
 
-<style>
-/* Estilo para os itens de lista, fazendo o <p> ficar abaixo do <span> */
-  ul li {
-  display: block; /* Deixa os itens de lista no layout padrão, sem flexbox */
-  margin-bottom: 10px; /* Adiciona espaçamento entre os itens da lista */
-}
+<ul>
+  <li>
+    <i class="bi bi-check-circle"></i>
+    <span>Hábitos alimentares saudáveis:</span>
+    <p>Consumir uma dieta equilibrada, rica em frutas, vegetais, grãos integrais e proteínas magras, enquanto se reduz a ingestão de sal, açúcar e gorduras saturadas. Hidratação adequada é fundamental.</p>
+  </li>
 
-ul li p {
-  margin-top: 5px; /* Espaço entre o <span> e o <p> */
-  font-size: 0.95em; /* Ajuste de tamanho para o parágrafo */
-  color: #555; /* Cor mais suave para o texto do parágrafo */
-}
+  <li>
+    <i class="bi bi-check-circle"></i>
+    <span>Atividades físicas regulares:</span>
+    <p>Praticar exercícios aeróbicos, fortalecimento muscular e alongamento para manter a saúde cardiovascular, a força muscular e a flexibilidade.</p>
+  </li>
+
+  <li>
+    <i class="bi bi-check-circle"></i>
+    <span>Vacinação em dia:</span>
+    <p>Manter as vacinas atualizadas para prevenir doenças infecciosas, como gripe e pneumonia, que são perigosas para os idosos.</p>
+  </li>
+
+  <li>
+    <i class="bi bi-check-circle"></i>
+    <span>Estimulação mental:</span>
+    <p>Engajar-se em atividades que desafiem o cérebro, como leitura, jogos e aprendizado de novas habilidades, para prevenir doenças cognitivas.</p>
+  </li>
+
+  <li>
+    <i class="bi bi-check-circle"></i>
+    <span>Acompanhamento médico regular:</span>
+    <p>Consultar médicos frequentemente para monitorar a saúde e detectar problemas precocemente, buscando especialistas conforme necessário.</p>
+  </li>
+</ul>
+
+<style>
+  /* Estilo para os itens de lista, fazendo o <p> ficar abaixo do <span> */
+  ul li {
+    display: flex;
+    align-items: flex-start; /* Alinha o ícone no topo do conteúdo */
+    gap: 8px; /* Espaço entre o ícone e o texto */
+    margin-bottom: 10px; /* Espaço entre os itens da lista */
+  }
+
+  ul li i {
+    color: #4CAF50; /* Cor do ícone */
+    font-size: 1.2em; /* Tamanho do ícone */
+    margin-top: 4px; /* Ajusta a posição do ícone */
+  }
+
+  ul li span {
+    font-weight: bold; /* Destaque para o span */
+    display: block; /* Garante que o span ocupe toda a largura */
+  }
+
+  ul li p {
+    margin: 0; /* Remove margens do parágrafo */
+    font-size: 0.95em; /* Ajuste de tamanho para o parágrafo */
+    color: #555; /* Cor mais suave para o texto do parágrafo */
+  }
+
+  ul {
+    padding: 0;
+    list-style-type: none; /* Remove os marcadores da lista */
+  }
 </style>
