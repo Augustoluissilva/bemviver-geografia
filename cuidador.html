@@ -210,12 +210,6 @@
         <div class="col-lg-10">
           <form id="uploadForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
             <div class="row gy-4">
-              <!-- Campo para enviar a foto -->
-              <div class="col-md-12">
-                <label for="photo-field" class="pb-2">Envie uma foto sua</label>
-                <input type="file" name="photo" id="photo-field" class="form-control" required>
-              </div>
-
               <form id="uploadForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                 <div class="row gy-4">
                   <!-- Campo Nome -->
@@ -234,6 +228,30 @@
                   <div class="col-md-12">
                     <label for="file-field" class="pb-2">Envie uma foto do seu rosto</label>
                     <input type="file" class="form-control" name="photo" id="file-field" accept="image/*">
+                  </div>
+
+                  <!-- Campo Formação -->
+                  <div class="col-md-12">
+                    <label for="education-field" class="pb-2">Formação</label>
+                    <input type="text" class="form-control" name="education" id="education-field" required>
+                  </div>
+
+                  <!-- Campo Endereço -->
+                  <div class="col-md-12">
+                    <label for="address-field" class="pb-2">Endereço</label>
+                    <input type="text" class="form-control" name="address" id="address-field" required>
+                  </div>
+
+                  <!-- Campo Disponibilidade -->
+                  <div class="col-md-12">
+                    <label for="availability-field" class="pb-2">Disponibilidade</label>
+                    <input type="text" class="form-control" name="availability" id="availability-field" required>
+                  </div>
+
+                  <!-- Campo Habilidades -->
+                  <div class="col-md-12">
+                    <label for="skills-field" class="pb-2">Habilidades</label>
+                    <textarea class="form-control" name="skills" rows="5" id="skills-field" required></textarea>
                   </div>
 
                   <!-- Botão de Envio -->
