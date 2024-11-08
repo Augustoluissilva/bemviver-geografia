@@ -218,62 +218,41 @@
 
               <form id="uploadForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                 <div class="row gy-4">
+                  <!-- Campo Nome -->
                   <div class="col-md-6">
                     <label for="name-field" class="pb-2">Nome</label>
                     <input type="text" name="name" id="name-field" class="form-control" required>
                   </div>
+
+                  <!-- Campo Telefone -->
                   <div class="col-md-6">
                     <label for="phone-field" class="pb-2">Telefone</label>
                     <input type="tel" class="form-control" name="phone" id="phone-field" required>
                   </div>
+
+                  <!-- Campo Foto -->
+                  <div class="col-md-12">
+                    <label for="file-field" class="pb-2">Envie uma foto do seu rosto</label>
+                    <input type="file" class="form-control" name="photo" id="file-field" accept="image/*">
+                  </div>
+
+                  <!-- Botão de Envio -->
                   <div class="col-md-12 text-center">
                     <button type="submit">Enviar</button>
                   </div>
                 </div>
               </form>
+
               <script>
-                <!-- JavaScript para enviar o formulário -->
+                // Adiciona o evento de envio do formulário
                 document.getElementById("uploadForm").addEventListener("submit", function (event) {
-                  event.preventDefault(); // Impede o envio padrão do formulário
+                  event.preventDefault(); // Impede o envio real do formulário
 
-                  // Criação do objeto FormData
-                  var formData = new FormData(this);
+                  // Exibe o alerta após o envio do formulário
+                  alert("Cadastro enviado com sucesso!");
 
-                  // Enviar os dados com AJAX (usando fetch)
-                  fetch('submit.php', {
-                    method: 'POST',
-                    body: formData
-                  })
-                    .then(response => response.json()) // Supondo que o servidor retorne JSON
-                    .then(data => {
-                      console.log('Sucesso:', data);
-                      alert("Formulário enviado com sucesso!");
-                    })
-                    .catch((error) => {
-                      console.error('Erro:', error);
-                      alert("Ocorreu um erro ao enviar o formulário.");
-                    });
-                });
-                document.getElementById("uploadForm").addEventListener("submit", function (event) {
-                  event.preventDefault(); // Impede o envio padrão do formulário
-
-                  // Criação do objeto FormData
-                  var formData = new FormData(this);
-
-                  // Enviar os dados com AJAX (usando fetch)
-                  fetch('submit.php', {
-                    method: 'POST',
-                    body: formData
-                  })
-                    .then(response => response.json()) // Supondo que o servidor retorne JSON
-                    .then(data => {
-                      console.log('Sucesso:', data);
-                      alert("Formulário enviado com sucesso!");
-                    })
-                    .catch((error) => {
-                      console.error('Erro:', error);
-                      alert("Ocorreu um erro ao enviar o formulário.");
-                    });
+                  // Opcional: Limpa os campos do formulário após o envio
+                  this.reset();
                 });
               </script>
 
