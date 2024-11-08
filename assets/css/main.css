@@ -9,7 +9,7 @@
 :root {
   --background-color: #FFFFFF;
   /* Branco como cor de base predominante */
-  --default-color: #A4A4A4;
+  --default-color: #2d2d2d;
   /* Cinza para a maior parte do texto */
   --heading-color: #011751;
   /* Azul escuro para títulos e subtítulos */
@@ -1069,7 +1069,7 @@ section,
 
 .call-to-action:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 50%);
+  background: color-mix(in srgb, var(--background-color), transparent 60%);
   position: absolute;
   inset: 0;
   z-index: 2;
