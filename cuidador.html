@@ -200,73 +200,53 @@
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Cadastre-se para cuidar!</h2>
-        <p>Deposite suas habilidades em ajudar quem mais precisa e faça a diferença.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100"
-        style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-10">
-          <form id="registration-form" class="php-email-form" data-aos="fade-up" data-aos-delay="200"
-            style="width: 100%; max-width: 600px;">
+          <form id="uploadForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
             <div class="row gy-4">
-
               <!-- Campo para enviar a foto -->
               <div class="col-md-12">
                 <label for="photo-field" class="pb-2">Envie uma foto sua</label>
                 <input type="file" name="photo" id="photo-field" class="form-control" required>
               </div>
-              <!-- Nome -->
+
+              <!-- Outros campos do formulário -->
               <div class="col-md-6">
                 <label for="name-field" class="pb-2">Nome</label>
                 <input type="text" name="name" id="name-field" class="form-control" required="">
               </div>
-
-              <!-- Email -->
               <div class="col-md-6">
-                <label for="email-field" class="pb-2">Email</label>
-                <input type="email" class="form-control" name="email" id="email-field" required="">
+                <label for="phone-field" class="pb-2">Telefone</label>
+                <input type="tel" class="form-control" name="phone" id="phone-field" required="">
               </div>
-
-              <!-- Formação -->
               <div class="col-md-12">
                 <label for="subject-field" class="pb-2">Formação</label>
                 <input type="text" class="form-control" name="subject" id="subject-field" required="">
               </div>
-
-              <!-- Endereço -->
               <div class="col-md-12">
                 <label for="subject-field" class="pb-2">Endereço</label>
                 <input type="text" class="form-control" name="subject" id="subject-field" required="">
               </div>
-
-              <!-- Disponibilidade -->
               <div class="col-md-12">
                 <label for="subject-field" class="pb-2">Disponibilidade</label>
                 <input type="text" class="form-control" name="subject" id="subject-field" required="">
               </div>
 
-              <!-- Habilidades -->
               <div class="col-md-12">
                 <label for="message-field" class="pb-2">Habilidades</label>
                 <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
               </div>
 
               <div class="col-md-12 text-center">
-                <div class="loading" style="display: none;">Carregando</div>
-                <div class="error-message" style="display: none;"></div>
-                <div class="sent-message" style="display: none;">Seu cadastro foi enviado, obrigado!</div>
+                <div class="loading">Carregando</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Seu cadastro foi enviado, obrigado!</div>
 
                 <button type="submit">Enviar</button>
               </div>
-
             </div>
           </form>
-        </div><!-- End Contact Form -->
-
+        </div>
       </div>
 
       <!-- JavaScript para enviar o formulário -->
