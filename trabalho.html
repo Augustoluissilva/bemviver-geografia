@@ -175,123 +175,27 @@
         </div>
       </section>
 
-      <!-- Know-How Chat Section -->
-      <section id="know-how-chat" class="about section">
-        <div class="container">
-          <div class="row gy-5">
-            <div class="content col-xl-7 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
-              <!-- Seção de perguntas para todos, cadastrados ou não -->
-              <h3>Faça sua Pergunta ou Responda</h3>
-
-              <div class="question-list">
-                <!-- As perguntas são carregadas aqui -->
-                <div class="question-item" onclick="showAnswerForm()">Como me torno um bom mentor para os idosos?</div>
-                <div class="question-item" onclick="showAnswerForm()">Quais são os desafios comuns ao ajudar idosos?
-                </div>
-                <div class="question-item" onclick="showAnswerForm()">Como posso melhorar minha comunicação com idosos?
-                </div>
-              </div>
-
-              <!-- Formulário para não cadastrados fazerem perguntas -->
-              <div class="form-section">
-                <h4>Fazer uma Pergunta</h4>
-                <textarea placeholder="Digite sua pergunta aqui..." id="new-question" rows="4"></textarea>
-                <button onclick="submitQuestion()">Enviar Pergunta</button>
-              </div>
-
-              <!-- Formulário para respostas, visível apenas para cadastrados -->
-              <div id="answer-container" style="display:none;">
-                <h3>Responda à Pergunta</h3>
-                <textarea placeholder="Digite sua resposta aqui..." id="answer-text" rows="4"></textarea>
-                <button onclick="submitAnswer()">Enviar Resposta</button>
-              </div>
-
-              <!-- Cadastro aparece apenas quando a resposta é selecionada -->
-              <div id="registration-container" style="display:none;">
-                <h3>Cadastre-se para Responder</h3>
-                <form id="registration-form">
-                  <input type="text" id="name" placeholder="Nome" required><br>
-                  <input type="number" id="age" placeholder="Idade" required><br>
-                  <input type="tel" id="phone" placeholder="Telefone" required><br>
-                  <button type="submit">Cadastrar</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <script>
-        // Exibe o formulário para responder uma pergunta, com cadastro
-        function showAnswerForm() {
-          document.getElementById('answer-container').style.display = 'block';
-          document.getElementById('registration-container').style.display = 'block';
-        }
-
-        // Função para enviar a pergunta (sem necessidade de cadastro)
-        function submitQuestion() {
-          var question = document.getElementById('new-question').value;
-          if (question) {
-            alert('Sua pergunta foi enviada: ' + question);
-            document.getElementById('new-question').value = '';  // Limpa o campo após o envio
-          } else {
-            alert('Por favor, digite uma pergunta.');
-          }
-        }
-
-        // Função para enviar a resposta (após cadastro)
-        function submitAnswer() {
-          var answer = document.getElementById('answer-text').value;
-          if (answer) {
-            alert('Sua resposta foi enviada: ' + answer);
-            document.getElementById('answer-text').value = '';  // Limpa o campo após o envio
-          } else {
-            alert('Por favor, digite uma resposta.');
-          }
-        }
-      </script>
-
       <style>
-        .know-how-btn {
-          padding: 10px 20px;
-          background-color: var(--accent-color);
-          color: var(--background-color);
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          font-weight: bold;
-        }
-
-        .know-how-btn:hover {
-          background-color: var(--nav-hover-color);
-          color: var(--contrast-color);
-        }
-
-        /* Centralizar o Know-How na página */
-        #know-how-chat .container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          padding: 0 20px;
-          /* Adiciona um pouco de espaço nas laterais */
-        }
-
-        #know-how-chat .row {
-          max-width: 1200px;
-          /* Limita a largura máxima do conteúdo */
-          width: 100%;
-        }
-
-        .content {
-          width: 100%;
-          max-width: 600px;
-          /* Limita a largura máxima de cada conteúdo */
-          margin: 0 auto;
-          /* Centraliza o conteúdo dentro do container */
-        }
-      </style>
-
+      #know-how-chat .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 0 20px; /* Adiciona um pouco de espaço nas laterais */
+      }
+      
+      #know-how-chat .row {
+        max-width: 1200px; /* Limita a largura máxima do conteúdo */
+        width: 100%;
+      }
+      
+      .content {
+        width: 100%;
+        max-width: 600px; /* Limita a largura máxima de cada conteúdo */
+        margin: 0 auto; /* Centraliza o conteúdo dentro do container */
+      }
+    </style>
+    
       <!-- Job Opportunities Section -->
       <section id="pricing" class="pricing section">
         <!-- Section Title -->
