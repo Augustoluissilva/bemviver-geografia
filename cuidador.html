@@ -216,62 +216,66 @@
                 <input type="file" name="photo" id="photo-field" class="form-control" required>
               </div>
 
-              <!-- Outros campos do formulário -->
-              <div class="col-md-6">
-                <label for="name-field" class="pb-2">Nome</label>
-                <input type="text" name="name" id="name-field" class="form-control" required="">
-              </div>
-              <div class="col-md-6">
-                <label for="phone-field" class="pb-2">Telefone</label>
-                <input type="tel" class="form-control" name="phone" id="phone-field" required="">
-              </div>
-              <div class="col-md-12">
-                <label for="subject-field" class="pb-2">Formação</label>
-                <input type="text" class="form-control" name="subject" id="subject-field" required="">
-              </div>
-              <div class="col-md-12">
-                <label for="subject-field" class="pb-2">Endereço</label>
-                <input type="text" class="form-control" name="subject" id="subject-field" required="">
-              </div>
-              <div class="col-md-12">
-                <label for="subject-field" class="pb-2">Disponibilidade</label>
-                <input type="text" class="form-control" name="subject" id="subject-field" required="">
-              </div>
+              <form id="uploadForm" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="row gy-4">
+                  <div class="col-md-6">
+                    <label for="name-field" class="pb-2">Nome</label>
+                    <input type="text" name="name" id="name-field" class="form-control" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phone-field" class="pb-2">Telefone</label>
+                    <input type="tel" class="form-control" name="phone" id="phone-field" required>
+                  </div>
+                  <div class="col-md-12 text-center">
+                    <button type="submit">Enviar</button>
+                  </div>
+                </div>
+              </form>
+              <script>
+                <!-- JavaScript para enviar o formulário -->
+                document.getElementById("uploadForm").addEventListener("submit", function (event) {
+                  event.preventDefault(); // Impede o envio padrão do formulário
 
-              <div class="col-md-12">
-                <label for="message-field" class="pb-2">Habilidades</label>
-                <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-              </div>
+                  // Criação do objeto FormData
+                  var formData = new FormData(this);
 
-              <div class="col-md-12 text-center">
-                <div class="loading">Carregando</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Seu cadastro foi enviado, obrigado!</div>
+                  // Enviar os dados com AJAX (usando fetch)
+                  fetch('submit.php', {
+                    method: 'POST',
+                    body: formData
+                  })
+                    .then(response => response.json()) // Supondo que o servidor retorne JSON
+                    .then(data => {
+                      console.log('Sucesso:', data);
+                      alert("Formulário enviado com sucesso!");
+                    })
+                    .catch((error) => {
+                      console.error('Erro:', error);
+                      alert("Ocorreu um erro ao enviar o formulário.");
+                    });
+                });
+                document.getElementById("uploadForm").addEventListener("submit", function (event) {
+                  event.preventDefault(); // Impede o envio padrão do formulário
 
-                <button type="submit">Enviar</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+                  // Criação do objeto FormData
+                  var formData = new FormData(this);
 
-      <!-- JavaScript para enviar o formulário -->
-      <script>
-        document.getElementById("registration-form").addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          const formData = new FormData(this);
-
-          // Simulação do envio de formulário
-          setTimeout(() => {
-            document.querySelector(".loading").style.display = "none";
-            document.querySelector(".sent-message").style.display = "block";
-          }, 2000);
-
-          // Resetar o formulário após envio
-          this.reset();
-        });
-      </script>
+                  // Enviar os dados com AJAX (usando fetch)
+                  fetch('submit.php', {
+                    method: 'POST',
+                    body: formData
+                  })
+                    .then(response => response.json()) // Supondo que o servidor retorne JSON
+                    .then(data => {
+                      console.log('Sucesso:', data);
+                      alert("Formulário enviado com sucesso!");
+                    })
+                    .catch((error) => {
+                      console.error('Erro:', error);
+                      alert("Ocorreu um erro ao enviar o formulário.");
+                    });
+                });
+              </script>
 
   </main>
 
@@ -387,7 +391,7 @@
 </html>
 
 <style>
-  .contact{
+  .contact {
     margin-top: 7%;
     margin-bottom: 5%;
     display: flex;
