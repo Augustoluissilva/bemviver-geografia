@@ -1565,10 +1565,14 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
 .contact .info-wrap {
   background-color: var(--surface-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  border-radius: 10px; /* Adicionado para bordas mais suaves */
 }
 
 @media (max-width: 575px) {
@@ -1584,13 +1588,13 @@ section,
 .contact .info-item i {
   font-size: 20px;
   color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  background: var(--accent-color); /* Ajustado para uma cor sólida */
   width: 44px;
   height: 44px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
+  border-radius: 50%;
   transition: all 0.3s ease-in-out;
   margin-right: 15px;
 }
@@ -1618,6 +1622,7 @@ section,
   height: 100%;
   padding: 30px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Bordas arredondadas para consistência */
 }
 
 @media (max-width: 575px) {
@@ -1632,10 +1637,10 @@ section,
   font-size: 14px;
   padding: 10px 15px;
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 5px; /* Borda arredondada */
   color: var(--default-color);
   background-color: var(--surface-color);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
 .contact .php-email-form input[type=text]:focus,
@@ -1657,72 +1662,11 @@ section,
   padding: 10px 30px;
   transition: 0.4s;
   border-radius: 50px;
+  cursor: pointer; /* Adicionando cursor para indicar que é clicável */
 }
 
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
-}
-
-/*--------------------------------------------------------------
-# Portfolio Details Section
---------------------------------------------------------------*/
-.portfolio-details .portfolio-details-slider img {
-  width: 100%;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-  opacity: 1;
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
-
-.portfolio-details .portfolio-info {
-  background-color: var(--surface-color);
-  padding: 30px;
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-}
-
-.portfolio-details .portfolio-info h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
-}
-
-.portfolio-details .portfolio-info ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.portfolio-details .portfolio-info ul li+li {
-  margin-top: 10px;
-}
-
-.portfolio-details .portfolio-description {
-  padding-top: 30px;
-}
-
-.portfolio-details .portfolio-description h2 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.portfolio-details .portfolio-description p {
-  padding: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
 /*--------------------------------------------------------------
