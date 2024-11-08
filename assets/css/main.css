@@ -1669,6 +1669,34 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
+/* Estilo para o campo de upload de arquivo */
+.contact .php-email-form input[type="file"] {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 5px;
+  color: var(--default-color);
+  background-color: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact .php-email-form input[type="file"]:focus {
+  border-color: var(--accent-color);
+}
+
+/* Estilo para o botão de upload (opcional, caso queira customizar a aparência) */
+.contact .php-email-form input[type="file"]::-webkit-file-upload-button {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.contact .php-email-form input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
 /*--------------------------------------------------------------
 # Service Details Section
 --------------------------------------------------------------*/
