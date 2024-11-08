@@ -185,12 +185,11 @@
 
               <div class="question-list">
                 <!-- As perguntas são carregadas aqui -->
-                <div class="question-item" onclick="showRegistrationForm()">Como me torno um bom mentor para os idosos?
+                <div class="question-item" onclick="showAnswerForm()">Como me torno um bom mentor para os idosos?</div>
+                <div class="question-item" onclick="showAnswerForm()">Quais são os desafios comuns ao ajudar idosos?
                 </div>
-                <div class="question-item" onclick="showRegistrationForm()">Quais são os desafios comuns ao ajudar
-                  idosos?</div>
-                <div class="question-item" onclick="showRegistrationForm()">Como posso melhorar minha comunicação com
-                  idosos?</div>
+                <div class="question-item" onclick="showAnswerForm()">Como posso melhorar minha comunicação com idosos?
+                </div>
               </div>
 
               <!-- Formulário para não cadastrados fazerem perguntas -->
@@ -200,7 +199,14 @@
                 <button onclick="submitQuestion()">Enviar Pergunta</button>
               </div>
 
-              <!-- Cadastro aparece apenas quando a pergunta é selecionada -->
+              <!-- Formulário para respostas, visível apenas para cadastrados -->
+              <div id="answer-container" style="display:none;">
+                <h3>Responda à Pergunta</h3>
+                <textarea placeholder="Digite sua resposta aqui..." id="answer-text" rows="4"></textarea>
+                <button onclick="submitAnswer()">Enviar Resposta</button>
+              </div>
+
+              <!-- Cadastro aparece apenas quando a resposta é selecionada -->
               <div id="registration-container" style="display:none;">
                 <h3>Cadastre-se para Responder</h3>
                 <form id="registration-form">
@@ -216,19 +222,31 @@
       </section>
 
       <script>
-        // Função para exibir o formulário de cadastro quando uma pergunta for selecionada
-        function showRegistrationForm() {
+        // Exibe o formulário para responder uma pergunta, com cadastro
+        function showAnswerForm() {
+          document.getElementById('answer-container').style.display = 'block';
           document.getElementById('registration-container').style.display = 'block';
         }
 
-        // Função para simular o envio da pergunta (não exige cadastro)
+        // Função para enviar a pergunta (sem necessidade de cadastro)
         function submitQuestion() {
           var question = document.getElementById('new-question').value;
           if (question) {
             alert('Sua pergunta foi enviada: ' + question);
-            document.getElementById('new-question').value = ''; // Limpa o campo após o envio
+            document.getElementById('new-question').value = '';  // Limpa o campo após o envio
           } else {
             alert('Por favor, digite uma pergunta.');
+          }
+        }
+
+        // Função para enviar a resposta (após cadastro)
+        function submitAnswer() {
+          var answer = document.getElementById('answer-text').value;
+          if (answer) {
+            alert('Sua resposta foi enviada: ' + answer);
+            document.getElementById('answer-text').value = '';  // Limpa o campo após o envio
+          } else {
+            alert('Por favor, digite uma resposta.');
           }
         }
       </script>
